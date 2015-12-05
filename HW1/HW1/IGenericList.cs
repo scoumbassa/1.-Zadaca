@@ -1,4 +1,6 @@
-﻿public interface IGenericList<X> { 
+﻿using System.Collections.Generic;
+
+public interface IGenericList<X> : IEnumerable<X> { 
     /// <summary> 
     /// Adds an item to the collection. 
     /// </summary> 

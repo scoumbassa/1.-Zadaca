@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -69,6 +70,11 @@ namespace HW1
             }
         }
 
+        public IEnumerator<T> GetEnumerator()
+        {
+            return new GenericListEnumerator<T>(this);
+        }
+
         public int IndexOf(X item)
         {
             for(int i = 0, size = Count; i < size; i++)
@@ -101,6 +107,11 @@ namespace HW1
             Array.Clear(_internalStorage, i, 1);
             _lastAddedElementIndex--;
             return true;
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }
