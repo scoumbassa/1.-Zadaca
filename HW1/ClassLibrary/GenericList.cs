@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HW1
+namespace ClassLibrary
 {
-    class GenericList<X> : IGenericList<X>
+    public class GenericList<X> : IGenericList<X>
     {
         private X[] _internalStorage;
         private int _lastAddedElementIndex = 0;
